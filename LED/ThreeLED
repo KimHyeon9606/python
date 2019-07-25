@@ -1,0 +1,43 @@
+import RPi.GPIO as GPIO
+import  time
+
+LED = 17
+LED1 = 27
+LED2 = 22
+# wPi. 0(GPIO. 0), BCM. 17, physical-Pin. 11
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(LED, GPIO.OUT)
+GPIO.setup(LED1, GPIO.OUT)
+GPIO.setup(LED2, GPIO.OUT)
+
+try :
+    while True :
+        GPIO.output(LED, False)
+        print("LED OFF.2..")
+        time.sleep(0.00000001)
+
+        GPIO.output(LED, True)
+        print("LED ON.1..")
+        time.sleep(0.00000001)
+
+        GPIO.output(LED1, False)
+        print("LED OFF.2..")
+        time.sleep(0.00000001)
+
+        GPIO.output(LED1, True)
+        print("LED ON.1..")
+        time.sleep(0.00000001)
+
+        GPIO.output(LED2, False)
+        print("LED OFF.2..")
+        time.sleep(0.00000001)
+
+        GPIO.output(LED2, True)
+        print("LED ON.1..")
+        time.sleep(0.00000001)
+
+
+except :
+    GPIO.cleanup()
+    print("end")
